@@ -1,10 +1,12 @@
 # Subject Notebook — implementation plan
 
-Planning baseline: 2026-10-26. Display name: **Subject Notebook**. Plugin ID: **`subject-notebook`**. Description: “Easily create, manage, and switch between projects.” This replaces the earlier Colored Folders name throughout the proposed plugin.
+Current implementation additions and superseding notebook-color/main-context decisions are recorded in [DECISIONS.md](DECISIONS.md), [DEVELOPMENT.md](DEVELOPMENT.md), and [VALIDATION.md](VALIDATION.md).
+
+Agent-authored planning baseline: 2026-10-26. Display name: **Subject Notebook**. Plugin ID: **`subject-notebook`**. Description: “Easily create, manage, and switch between projects.” This replaces the earlier Colored Folders name throughout the proposed plugin. Implementation is now authorized; this document preserves the original plan. See [DEVELOPMENT.md](DEVELOPMENT.md) and [VALIDATION.md](VALIDATION.md) for current implementation and validation status.
 
 ## Repository findings and scope
 
-The repository has no tracked application files, package manifest, dependencies, local Obsidian declarations, or commits. There is no implementation to preserve or test. The user-supplied AGENTS.md instructions govern future code; project-specific preferences are recorded in [AGENTS_updated.md](AGENTS_updated.md).
+At the planning baseline, the repository had no tracked application files, package manifest, dependencies, local Obsidian declarations, or commits. The user-supplied AGENTS.md instructions govern code; project-specific preferences are recorded in [AGENTS_updated.md](AGENTS_updated.md).
 
 This change creates planning documents only. No plugin, dependency installation, test vault, or production-vault changes are included. API declarations were inspected remotely in the official repository. Documentation verification is not a runtime compatibility test.
 

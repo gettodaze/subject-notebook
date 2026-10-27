@@ -1,6 +1,6 @@
 # Subject Notebook — architectural decisions
 
-Status: proposed implementation baseline, researched 2026-10-26. No plugin implementation is included. [PLAN.md](PLAN.md) defines behavior; [FEASIBILITY.md](FEASIBILITY.md) distinguishes verified capabilities from integration hypotheses.
+Agent-authored implementation baseline, researched 2026-10-26. [PLAN.md](PLAN.md) defines behavior; [FEASIBILITY.md](FEASIBILITY.md) records the original integration hypotheses. See [VALIDATION.md](VALIDATION.md) for host-test results and subsequent decisions.
 
 ## 1. Native workspace operations; no Workspaces Plus dependency
 
@@ -31,7 +31,7 @@ Choose A. Every view queries the same task notes. No duplicate database and no t
 
 The documented syntax supports both shared and view-level filters. Named-view embeds select a view without changing the default view for every consumer. ([Base syntax](https://obsidian.md/help/bases/syntax), [named embeds](https://obsidian.md/help/bases/create-base))
 
-Prototype concept, not a generated file in this change:
+Initial design example (the implementation now generates equivalent configuration):
 
 ```yaml
 filters:
@@ -110,3 +110,13 @@ Discover all immediate folders and infer their paths. Persist only user choices:
 Treat empty-editor fallback as a small recovery action within the managed project area. Never intercept leaf closure or open the log whenever an unrelated tool becomes active. Reopen only in a surviving empty managed editor after a verified project-note-to-empty transition; respect explicit closure of the whole area. This sacrifices aggressive fallback to avoid navigation loops.
 
 Keep daily content generation as a pure function receiving a date. File synchronization and cursor positioning remain separate. This is sufficient preparation for future per-project templates; a template registry, Templater dependency, or cross-plugin event protocol is unnecessary now.
+
+## Subsequent implementation decisions
+
+The implementation and current user requirements supersede earlier planning language about active-workspace coloring. Color belongs to each notebook folder, including nested reference notes and archived notebooks. A separate persisted main-notebook pointer drives creation, restore, and conservative fallback. A colored, labeled status pill identifies main context without recoloring the whole application. Navigation never changes this pointer automatically; switching or Set main notebook does so explicitly.
+
+Native-host validation on Obsidian 1.14.5 confirmed nested public splits, independent named Base embeds, native status-updating drag, and exact-color `html()` formula swatches. These are implemented rather than speculative; see [VALIDATION.md](VALIDATION.md). Explorer decoration remains deferred for lack of a verified public hook. Native planner backgrounds retain the user theme to preserve contrast.
+
+Scratch/archive/combine operations use normal folders and Markdown. Scratch lifetime is a user decision; no expiry worker runs. Combine moves into a target subfolder and reassigns task `project`, keeping logs separate. Archive moves outside the active root and leaves task properties intact. Both require concrete previews and abort on changed inventories; existing Base views are not silently removed.
+
+Optional homepage/Kanban roles reduce a project’s layout without deleting data. Global Home has independent toggles. Templates are create-only Markdown copies with three explicit tokens. Separate restore/Home commands have no default hotkeys. These choices keep the plugin close to native files and commands.

@@ -1,0 +1,29 @@
+{
+  "name": "subject-notebook",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Easily create, manage, and switch between projects in Obsidian.",
+  "scripts": {
+    "dev": "node esbuild.config.mjs --watch",
+    "build": "tsc --noEmit && node esbuild.config.mjs",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src test",
+    "format": "prettier --write src test scripts *.json *.mjs styles.css",
+    "format:check": "prettier --check src test scripts *.json *.mjs styles.css",
+    "test": "node scripts/test.mjs",
+    "test:host": "node scripts/host-test.mjs --smoke --extended",
+    "package": "npm run build && node scripts/package.mjs",
+    "check": "npm run typecheck && npm run lint && npm run format:check && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "18.19.130",
+    "esbuild": "0.25.12",
+    "eslint": "9.39.1",
+    "obsidian": "1.14.4",
+    "playwright-core": "1.56.1",
+    "prettier": "3.6.2",
+    "typescript": "5.7.3",
+    "typescript-eslint": "8.46.2",
+    "yaml": "2.9.1"
+  }
+}

@@ -1,6 +1,6 @@
 # Subject Notebook — feasibility assessment
 
-Researched 2026-10-26 against official live documentation, the official sample repository, and published TypeScript declarations. The local repository is empty; no installed Obsidian or local type package was available. All “verified” statements below mean documented or declared capabilities, not successful execution in a running vault.
+Agent-authored research baseline, 2026-10-26, using official documentation, the official sample repository, and published TypeScript declarations. At planning time the repository was empty and no running-host checks had been performed. All “verified” statements below refer to that documentation review. Current host-test evidence is recorded separately in [VALIDATION.md](VALIDATION.md).
 
 ## Capability assessment
 

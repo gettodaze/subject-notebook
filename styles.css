@@ -1,0 +1,66 @@
+.subject-notebook-swatch {
+  display: inline-block;
+  width: 0.85em;
+  height: 0.85em;
+  border-radius: 50%;
+  border: 1px solid var(--text-muted);
+  margin-inline-end: 0.6em;
+  vertical-align: middle;
+}
+
+.subject-notebook-project {
+  --background-primary: var(--sn-background);
+  --background-primary-alt: var(--sn-background);
+  --background-secondary: var(--sn-background);
+  --background-secondary-alt: var(--sn-background);
+  --text-normal: var(--sn-text);
+  --text-muted: var(--sn-text);
+  --text-faint: var(--sn-text);
+  --h1-color: var(--sn-text);
+  --h2-color: var(--sn-text);
+  --h3-color: var(--sn-text);
+  --h4-color: var(--sn-text);
+  --h5-color: var(--sn-text);
+  --h6-color: var(--sn-text);
+  --link-color: var(--sn-internal-link);
+  --link-color-hover: var(--sn-internal-link);
+  --link-external-color: var(--sn-external-link);
+  --link-external-color-hover: var(--sn-external-link);
+  --link-external-decoration: underline;
+  --text-selection: color-mix(in srgb, var(--sn-text) 25%, transparent);
+  background-color: var(--sn-background);
+  color: var(--sn-text);
+}
+
+.subject-notebook-project a.external-link {
+  text-decoration-style: dotted;
+}
+
+.subject-notebook-planner-content {
+  overflow: auto;
+}
+
+.subject-notebook-planner-help {
+  margin-block-start: 0.75em;
+  font-size: var(--font-small);
+  color: var(--text-muted);
+}
+
+.subject-notebook-preview {
+  white-space: pre-wrap;
+  max-height: 45vh;
+  overflow: auto;
+}
+
+.subject-notebook-error {
+  color: var(--text-error);
+}
+
+.subject-notebook-status {
+  cursor: pointer;
+  background-color: var(--sn-main-background, transparent);
+  color: var(--sn-main-text, var(--text-muted));
+  border-radius: var(--radius-s);
+  padding-inline: 0.6em;
+  border: 1px solid color-mix(in srgb, currentColor 35%, transparent);
+}

@@ -1,0 +1,14 @@
+node_modules/
+main.js
+dist/
+coverage/
+.test-vault/
+*.tsbuildinfo
+.agents/
+.aws/
+.codex/
+.env
+.env.*
+!.env.example
+*.pem
+*.key

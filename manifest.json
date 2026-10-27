@@ -1,0 +1,10 @@
+{
+  "id": "subject-notebook",
+  "name": "Subject Notebook",
+  "version": "0.1.0",
+  "minAppVersion": "1.14.5",
+  "description": "Easily create, manage, and switch between projects.",
+  "author": "gettodaze",
+  "authorUrl": "https://github.com/gettodaze",
+  "isDesktopOnly": true
+}
